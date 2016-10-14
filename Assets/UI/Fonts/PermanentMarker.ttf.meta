@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 941584f189a14465faa5c04535b62138
-timeCreated: 1476483735
+guid: 4cd434386e6874c27b16ce43d4caf8e1
+timeCreated: 1476484209
 licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 4
@@ -10,9 +10,8 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Montserrat
-  fallbackFontReferences:
-  - {fileID: 12800000, guid: 0999bc99669624b4bb9b46179b536a7b, type: 3}
+  - Permanent Marker
+  fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
