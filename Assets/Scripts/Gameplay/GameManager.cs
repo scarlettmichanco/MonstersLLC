@@ -24,10 +24,20 @@ public class GameManager : GenericSingletonClass<GameManager> {
 
 	public void EndRound()
 	{
+		if (!RoundStarted)
+			return;
+
+			
 		//display gameover card,
 		UIRoundOver.SetActive(true);
 		//
 		RoundStarted = false;
+	}
+
+	public void NoiseEventTriggered()
+	{
+		Debug.Log("End Round from noise!");
+		EndRound();
 	}
 	
 	// Update is called once per frame
