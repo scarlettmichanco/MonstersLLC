@@ -9,6 +9,8 @@ public class MicrophoneTrigger : MonoBehaviour {
 	MicrophoneInput micIn;
 	// Use this for initialization
 	void Start () {
+		if (audioInputObject == null)
+			audioInputObject = GameObject.Find("AudioInputObject");
 		micIn = (MicrophoneInput) audioInputObject.GetComponent("MicrophoneInput");
 	}
 	
