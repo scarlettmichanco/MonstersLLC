@@ -12,6 +12,9 @@ public class PointsOnCollision : MonoBehaviour {
 	[Tooltip("Minimum relative velocity to assign points")]
 	public float MinimumForceRequired = 0.25f;
 
+	[Tooltip("UI Toast Prefab to spawn on points awarded")]
+	public GameObject UIToastPrefab;
+
 	private bool hasCollided = false;
 
 	// Use this for initialization
@@ -31,6 +34,12 @@ public class PointsOnCollision : MonoBehaviour {
 		if (!hasCollided)
 		{
 			GameManager.Instance.AddPoints(NumberOfPoints + extraForcePoint);
+		}
+
+		if (UIToastPrefab != null)
+		{
+			GameObject t = Instantiate(UIToastPrefab, col.contacts[0].point, Quaternion.identity) as GameObject;
+			t.GetComponent<UIToast>().Toast(UIToast.Scare.Small);
 		}
 
         hasCollided = true;
