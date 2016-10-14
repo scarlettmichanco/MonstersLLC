@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: kidsFloorColorPattern
+  m_Name: bulbtransparent
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
@@ -48,9 +48,9 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: 14c3c54a28e774d0eba57f5c5314dace, type: 3}
-        m_Scale: {x: 2, y: 4}
-        m_Offset: {x: -0.5, y: -1.5}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - first:
         name: _MetallicGlossMap
       second:
@@ -84,7 +84,7 @@ Material:
       second: 0
     - first:
         name: _GlossMapScale
-      second: 0
+      second: 1
     - first:
         name: _Glossiness
       second: 0
@@ -121,7 +121,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.7137931, g: 0.7137931, b: 0.7137931, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 0.822}
     - first:
         name: _EmissionColor
-      second: {r: 0, g: 0, b: 0, a: 1}
+      second: {r: 0.6310345, g: 0.6102911, b: 0.45471603, a: 1}
