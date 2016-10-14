@@ -11,6 +11,7 @@ public float pitch = 0;
 	void Start () {
 		AudioSource audio = GetComponent<AudioSource>();
 		GetComponent<AudioSource>().clip = Microphone.Start(null, true, 10, 44100);
+		Debug.Log(Microphone.GetPosition(null).ToString());
 		GetComponent<AudioSource>().loop = true;
 		GetComponent<AudioSource>().mute = true;
 		while (!(Microphone.GetPosition(null) > 0)){} // wait for recording
@@ -31,6 +32,7 @@ public float pitch = 0;
 	
 	// Update is called once per frame
 	void Update () {
+		Debug.Log(Microphone.GetPosition(null).ToString());
 		// set pitch equal to average volume level * sensitivity;
 		pitch = GetVolumeLevel() * sensitivity;
 		Debug.Log("pitch");
