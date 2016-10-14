@@ -10,6 +10,8 @@ public class GameManager : GenericSingletonClass<GameManager> {
 	public GameObject UIRoundOver;
 	[Tooltip("UI Text element for Timer Countdown display")]
 	public Text CountdownText;
+	[Tooltip("Audio source for alarm going off")]
+	public AudioSource AlarmAudio;
 
 	private bool RoundStarted = false;
 
@@ -32,7 +34,7 @@ public class GameManager : GenericSingletonClass<GameManager> {
 		timeRemaining = RoundTimeInSeconds;
 	}
 
-	public void EndRound()
+	public void EndRound(bool success)
 	{
 		if (!RoundStarted)
 			return;
@@ -47,13 +49,21 @@ public class GameManager : GenericSingletonClass<GameManager> {
 	public void NoiseEventTriggered()
 	{
 		Debug.Log("End Round from noise!");
-		EndRound();
+		EndRound(true);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (RoundStarted)
 		{
+			if (Mathf.FloorToInt(timeRemaining) <= 0)
+			{
+				//trigger alarm code
+				AlarmAudio.Play();
+				EndRound(false);
+				CountdownText.text = "00:00";
+				return;
+			}
 			timeRemaining -= Time.deltaTime;
 			string minutes = Mathf.Floor(timeRemaining / 60).ToString("00");
  			string seconds = (timeRemaining % 60).ToString("00");
