@@ -489,10 +489,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 308735659}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48933732130f6490e9bdae908c00f74c, type: 3}
+  m_Script: {fileID: 11500000, guid: caaf1190889444fc683e9531770de806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Menu
 --- !u!23 &308735662
 MeshRenderer:
   m_ObjectHideFlags: 0
