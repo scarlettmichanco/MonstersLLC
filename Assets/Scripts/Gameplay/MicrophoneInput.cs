@@ -2,7 +2,7 @@
 using System.Collections;
 
 [RequireComponent(typeof(AudioSource))]
-public class MicrophoneTrigger : MonoBehaviour {
+public class MicrophoneInput : MonoBehaviour {
 
 public float sensitivity = 100;
 public float pitch = 0;
