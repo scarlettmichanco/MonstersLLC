@@ -3,6 +3,8 @@ using System.Collections;
 
 public class GameManager : GenericSingletonClass<GameManager> {
 
+	public GameObject UIRoundOver;
+
 	private bool RoundStarted = false;
 
 	private int totalPoints = 0;
@@ -15,13 +17,15 @@ public class GameManager : GenericSingletonClass<GameManager> {
 
 	public void StartRound()
 	{
+		UIRoundOver.SetActive(false);
 		RoundStarted = true;
+		totalPoints = 0;
 	}
 
 	public void EndRound()
 	{
 		//display gameover card,
-
+		UIRoundOver.SetActive(true);
 		//
 		RoundStarted = false;
 	}
