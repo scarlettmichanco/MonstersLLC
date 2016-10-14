@@ -44,11 +44,32 @@ public class GameManager : GenericSingletonClass<GameManager> {
 		timeRemaining = RoundTimeInSeconds;
 	}
 
-	public void EndRound(bool success)
+	public void EndRound(bool success){
+		EndRound(success, 1f);
+	}
+
+	public void EndRound(bool success, float roarPower)
 	{
 		if (!RoundStarted)
 			return;
 
+		if (success)
+		{
+			TitleLabel.text = "SUCCESSFUL SCARE";
+
+			SetScarePoints(totalPoints);
+			SetTimeRemainingPoints(Mathf.FloorToInt(RoundTimeInSeconds-timeRemaining));
+			SetRoarPower(roarPower);
+			SetGrade(Mathf.FloorToInt((totalPoints + Mathf.FloorToInt(RoundTimeInSeconds-timeRemaining)) * roarPower));
+		}else{
+			TitleLabel.text = "FAILED SCARE";
+			TitleLabel.color = Color.red;
+
+			SetScarePoints(0);
+			SetTimeRemainingPoints(0);
+			SetRoarPower(0);
+			SetGrade(0);
+		}
 		
 			
 		//display gameover card,
@@ -60,21 +81,39 @@ public class GameManager : GenericSingletonClass<GameManager> {
 	void SetScarePoints(int points)
 	{
 		ScarePointsLabel.text = "+" + points;
+		if (points == 0)
+		{
+			ScarePointsLabel.color = Color.red;
+		}
 	}
 
 	void SetTimeRemainingPoints(int points)
 	{
 		TimeRemainingLabel.text = "+" + points;
+		if (points == 0)
+		{
+			TimeRemainingLabel.color = Color.red;
+		}
 	}
 
 	void SetRoarPower(float multi)
 	{
-		RoarPowerLabel.text = multi.ToString() + "x";
+		RoarPowerLabel.text = multi.ToString("0.00") + "x";
+		if (multi == 0f)
+		{
+			RoarPowerLabel.color = Color.red;
+		}
 	}
 
 	void SetGrade(int grandTotalPoints)
 	{
 		string grade = "F";
+
+		if (grandTotalPoints == 0)
+		{
+			GradeLabel.color = Color.red;
+		}
+
 		if (grandTotalPoints > 20)
 		{
 			grade = "D";
@@ -95,12 +134,14 @@ public class GameManager : GenericSingletonClass<GameManager> {
 		{
 			grade = "A+";
 		}
+
+		GradeLabel.text = grade;
 	}
 
-	public void NoiseEventTriggered()
+	public void NoiseEventTriggered(float roarPower)
 	{
 		Debug.Log("End Round from noise!");
-		EndRound(true);
+		EndRound(true, roarPower);
 	}
 	
 	// Update is called once per frame
@@ -120,11 +161,13 @@ public class GameManager : GenericSingletonClass<GameManager> {
  			string seconds = (timeRemaining % 60).ToString("00");
 			CountdownText.text = minutes + ":" + seconds;
 		}
-		
 	}
 
 	public void AddPoints(int points)
 	{
+		if (!RoundStarted)
+			return;
+
 		Debug.Log("Added points: " + points);
 		totalPoints += points;
 	}

@@ -27,10 +27,15 @@ public class MicVolumeTrigger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (LevelMax() >= 100)
+		float level = LevelMax();
+		if (level >= 100)
 		{
 			Debug.Log("Threshold met!");
-			GameManager.Instance.NoiseEventTriggered();
+			float multi = (level-100)/100;
+			multi += 1;
+
+			GameManager.Instance.NoiseEventTriggered(multi);
+			StopMicrophone(chosenDevice);
 		}		
 	}
 
