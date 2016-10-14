@@ -31,15 +31,23 @@ public class PointsOnCollision : MonoBehaviour {
 
 		int extraForcePoint = Mathf.FloorToInt(ForceMultiplier * col.relativeVelocity.magnitude);
 
+		int pointsToAdd = NumberOfPoints + extraForcePoint;
 		if (!hasCollided)
 		{
-			GameManager.Instance.AddPoints(NumberOfPoints + extraForcePoint);
+
+
+			GameManager.Instance.AddPoints(pointsToAdd);
 		}
 
 		if (UIToastPrefab != null)
 		{
 			GameObject t = Instantiate(UIToastPrefab, col.contacts[0].point, Quaternion.identity) as GameObject;
-			t.GetComponent<UIToast>().Toast(UIToast.Scare.Small);
+			if (pointsToAdd > 12)
+			{
+				t.GetComponent<UIToast>().Toast(UIToast.Scare.Large);
+			}else{
+				t.GetComponent<UIToast>().Toast(UIToast.Scare.Small);
+			}
 		}
 
         hasCollided = true;

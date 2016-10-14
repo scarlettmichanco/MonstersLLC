@@ -1091,7 +1091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f8c41f7529f64fb2b8218f66d83d006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfPoints: 10
+  NumberOfPoints: 25
   ForceMultiplier: 0
   MinimumForceRequired: 0.25
   UIToastPrefab: {fileID: 1000013355173804, guid: 73c0ffde946f54c61af6a6d12beaad7e,
