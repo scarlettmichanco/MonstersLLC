@@ -10,7 +10,7 @@ public class StartGame : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void OnCollisionEnter (Collision col) {
+	void OnTriggerEnter (Collider col) {
 		Debug.Log("somethingHappened");
 		SceneManager.LoadScene ("Bedroom");
 	}
