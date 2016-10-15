@@ -42,6 +42,9 @@ public class PointsOnCollision : MonoBehaviour {
 			GameObject rm = GameObject.FindWithTag("RoundManager");
 			if (rm != null)
 			{
+				if (!rm.GetComponent<RoundManager>().RoundStarted)
+					return;
+
 				rm.GetComponent<RoundManager>().AddPoints(pointsToAdd);
 			}
 		}

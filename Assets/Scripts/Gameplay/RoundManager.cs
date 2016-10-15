@@ -24,7 +24,7 @@ public class RoundManager : MonoBehaviour {
 
 	public Text GradeLabel;
 
-	private bool RoundStarted = false;
+	public bool RoundStarted = false;
 
 	private int totalPoints = 0;
 
