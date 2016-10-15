@@ -21,8 +21,11 @@ public class RoundManager : MonoBehaviour {
 	public Text ScarePointsLabel;
 	public Text TimeRemainingLabel;
 	public Text RoarPowerLabel;
-
 	public Text GradeLabel;
+
+	[Header("Audio Sources")]
+	public AudioSource BuildUp;
+	public float BuildUpLength;
 
 	public bool RoundStarted = false;
 
@@ -157,6 +160,12 @@ public class RoundManager : MonoBehaviour {
 				CountdownText.text = "00:00";
 				return;
 			}
+
+			if (timeRemaining - BuildUpLength <= 0 && !BuildUp.isPlaying)
+			{
+				BuildUp.Play();
+			}
+
 			timeRemaining -= Time.deltaTime;
 			string minutes = Mathf.Floor(timeRemaining / 60).ToString("00");
  			string seconds = (timeRemaining % 60).ToString("00");
