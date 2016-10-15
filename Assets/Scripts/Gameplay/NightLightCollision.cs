@@ -12,4 +12,13 @@ public class NightLightCollision : MonoBehaviour {
 		rb.useGravity = true;
 		light.enabled = false;
 	}
+
+	void OnTriggerEnter(Collider col)
+	{
+		Rigidbody rb = GetComponent<Rigidbody>();
+		rb.isKinematic = false;
+		rb.useGravity = true;
+		GetComponent<Collider>().isTrigger = false;
+		//light.enabled = false;
+	}
 }
