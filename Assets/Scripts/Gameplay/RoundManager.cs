@@ -79,7 +79,7 @@ public class RoundManager : MonoBehaviour {
 			SetGrade(0);
 		}
 
-		kid.transform.localEulerAngles = new Vector3(0, 127f, 90f);
+		kid.transform.localEulerAngles = new Vector3(0, 120f, 90f);
 		
 			
 		//display gameover card,
