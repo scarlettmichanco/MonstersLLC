@@ -24,7 +24,7 @@ public class PointsOnLeaveArea : MonoBehaviour {
 	void OnTriggerExit(Collider other) {
         if (other == LeaveArea && !hasLeftArea)
 		{
-			GameManager.Instance.AddPoints(NumberOfPoints);
+			GameObject.FindWithTag("RoundManager").GetComponent<RoundManager>().AddPoints(NumberOfPoints);
 			hasLeftArea = true;
 		}
     }

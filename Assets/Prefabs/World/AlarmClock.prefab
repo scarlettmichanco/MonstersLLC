@@ -72,6 +72,7 @@ GameObject:
   - 65: {fileID: 65000012498569330}
   - 65: {fileID: 65000011200643926}
   - 54: {fileID: 54000011813966080}
+  - 114: {fileID: 114000012120735476}
   m_Layer: 0
   m_Name: AlarmClock
   m_TagString: Untagged
@@ -120,10 +121,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012049280974}
-  m_LocalRotation: {x: -0.96441704, y: 0.17713656, z: -0.035456493, w: 0.19304235}
-  m_LocalPosition: {x: -0.000028790906, y: 1.2150283, z: -0.015061742}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1.362, y: 0.385, z: -0.256}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: -158.952, y: -8.205994, z: 22.146988}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children:
   - {fileID: 4000012930631706}
   - {fileID: 4000013469383926}
@@ -290,7 +291,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 63f1be10ad6794ccb8b1d1584d6cbab4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4225db16219a3471ab5d1b9dc87f6a8b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -343,7 +344,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -392,6 +393,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114000012120735476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012049280974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f8c41f7529f64fb2b8218f66d83d006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumberOfPoints: 10
+  ForceMultiplier: 0
+  MinimumForceRequired: 0.25
+  UIToastPrefab: {fileID: 1000013355173804, guid: 73c0ffde946f54c61af6a6d12beaad7e,
+    type: 2}
 --- !u!114 &114000013123911694
 MonoBehaviour:
   m_ObjectHideFlags: 1

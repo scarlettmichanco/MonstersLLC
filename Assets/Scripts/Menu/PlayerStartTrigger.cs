@@ -46,7 +46,7 @@ public class PlayerStartTrigger : MonoBehaviour {
 
 	void StartLevel()
 	{
-		GameManager.Instance.StartRound();
+		//FindGameObjectWithTag("RoundManager").GetComponent<RoundManager>().StartRound();
 		SceneManager.LoadScene ("Bedroom");
 	}
 }
