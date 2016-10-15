@@ -10,6 +10,7 @@ public class RoundManager : MonoBehaviour {
 	public int RoundTimeInSeconds = 60;
 
 	[Header("UI/Round Bindings")]
+	public GameObject kid;
 	public GameObject UIToastPrefab;
 	[Tooltip("UI GameObject for RoundOver Card")]
 	public GameObject UIRoundOver;
@@ -27,6 +28,8 @@ public class RoundManager : MonoBehaviour {
 	[Header("Audio Sources")]
 	public AudioSource BuildUp;
 	public float BuildUpLength;
+
+
 
 	public bool RoundStarted = false;
 
@@ -75,6 +78,8 @@ public class RoundManager : MonoBehaviour {
 			SetRoarPower(0);
 			SetGrade(0);
 		}
+
+		kid.transform.localEulerAngles = new Vector3(0, 127f, 90f);
 		
 			
 		//display gameover card,
