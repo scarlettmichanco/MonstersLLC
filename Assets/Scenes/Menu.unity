@@ -513,7 +513,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 457919638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -730,7 +730,7 @@ GameObject:
   - 64: {fileID: 914105334}
   - 23: {fileID: 914105333}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Plane3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -743,7 +743,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 914105331}
   m_LocalRotation: {x: 0.0000005296329, y: -0.7071068, z: 0.7071068, w: 0.0000005296329}
-  m_LocalPosition: {x: 2, y: -20.4, z: 13.9}
+  m_LocalPosition: {x: 2, y: -20, z: -12}
   m_LocalScale: {x: 35, y: 3, z: 28}
   m_LocalEulerAnglesHint: {x: 90, y: -900, z: 0}
   m_Children: []
@@ -809,7 +809,7 @@ GameObject:
   - 64: {fileID: 1098100501}
   - 23: {fileID: 1098100500}
   m_Layer: 0
-  m_Name: Plane (1)
+  m_Name: Plane2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
