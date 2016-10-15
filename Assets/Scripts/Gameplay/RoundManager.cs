@@ -29,6 +29,8 @@ public class RoundManager : MonoBehaviour {
 	public AudioSource BuildUp;
 	public float BuildUpLength;
 
+	private bool animatescare = false;
+
 
 
 	public bool RoundStarted = false;
@@ -36,6 +38,8 @@ public class RoundManager : MonoBehaviour {
 	private int totalPoints = 0;
 
 	private float timeRemaining = 0f;
+
+	private Vector3 startRot;
 
 	// Use this for initialization
 	void Start()
@@ -79,8 +83,8 @@ public class RoundManager : MonoBehaviour {
 			SetGrade(0);
 		}
 
-		kid.transform.localEulerAngles = new Vector3(0, 120f, 90f);
-		
+		startRot = kid.transform.localEulerAngles;
+		animatescare = true;
 			
 		//display gameover card,
 		UIRoundOver.SetActive(true);
@@ -154,8 +158,16 @@ public class RoundManager : MonoBehaviour {
 		EndRound(true, roarPower);
 	}
 	
+	private float animateTimer = 0;
 	// Update is called once per frame
 	void Update () {
+
+		if (animatescare)
+		{
+			animateTimer += Time.deltaTime;
+			kid.transform.localEulerAngles = Vector3.Lerp(startRot, new Vector3(0, 120f, 90f), Mathf.Clamp01(animateTimer/0.25f));
+		}
+
 		if (RoundStarted)
 		{
 			if (Mathf.FloorToInt(timeRemaining) <= 0)
