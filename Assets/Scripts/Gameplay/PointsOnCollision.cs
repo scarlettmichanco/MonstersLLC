@@ -36,7 +36,7 @@ public class PointsOnCollision : MonoBehaviour {
 		{
 
 
-			GameManager.Instance.AddPoints(pointsToAdd);
+			GameObject.FindWithTag("RoundManager").GetComponent<RoundManager>().AddPoints(pointsToAdd);
 		}
 
 		if (UIToastPrefab != null)

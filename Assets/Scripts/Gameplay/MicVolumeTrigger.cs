@@ -34,7 +34,7 @@ public class MicVolumeTrigger : MonoBehaviour {
 			float multi = (level-100)/100;
 			multi += 1;
 
-			GameManager.Instance.NoiseEventTriggered(multi);
+			GameObject.FindWithTag("RoundManager").GetComponent<RoundManager>().NoiseEventTriggered(multi);
 			StopMicrophone(chosenDevice);
 		}		
 	}

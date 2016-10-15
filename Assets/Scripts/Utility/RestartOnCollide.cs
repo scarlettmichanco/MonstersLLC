@@ -9,7 +9,7 @@ public class RestartOnCollide : MonoBehaviour {
 	{
 
 		SceneManager.LoadScene ("Bedroom");
-		GameManager.Instance.StartRound();
+		//GameManager.Instance.StartRound();
 
 	}
 }
