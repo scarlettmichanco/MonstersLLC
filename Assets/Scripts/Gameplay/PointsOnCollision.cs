@@ -49,16 +49,19 @@ public class PointsOnCollision : MonoBehaviour {
 			}
 		}
 
-		if (UIToastPrefab != null)
+		if (UIToastPrefab == null)
 		{
-			GameObject t = Instantiate(UIToastPrefab, col.contacts[0].point, Quaternion.identity) as GameObject;
-			if (pointsToAdd > 12)
-			{
-				t.GetComponent<UIToast>().Toast(UIToast.Scare.Large);
-			}else{
-				t.GetComponent<UIToast>().Toast(UIToast.Scare.Small);
-			}
+			UIToastPrefab = GameObject.FindWithTag("RoundManager").GetComponent<RoundManager>().UIToastPrefab;
 		}
+		
+		GameObject t = Instantiate(UIToastPrefab, col.contacts[0].point, Quaternion.identity) as GameObject;
+		if (pointsToAdd > 12)
+		{
+			t.GetComponent<UIToast>().Toast(UIToast.Scare.Large);
+		}else{
+			t.GetComponent<UIToast>().Toast(UIToast.Scare.Small);
+		}
+		
 
         hasCollided = true;
     }

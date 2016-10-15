@@ -10,6 +10,7 @@ public class RoundManager : MonoBehaviour {
 	public int RoundTimeInSeconds = 60;
 
 	[Header("UI/Round Bindings")]
+	public GameObject UIToastPrefab;
 	[Tooltip("UI GameObject for RoundOver Card")]
 	public GameObject UIRoundOver;
 	[Tooltip("UI Text element for Timer Countdown display")]
