@@ -24,6 +24,11 @@ public class PointsOnCollision : MonoBehaviour {
 
 	void OnCollisionEnter (Collision col)
     {
+		if (hasCollided)
+		{
+			return;
+		}
+
 		if (col.relativeVelocity.magnitude < MinimumForceRequired)
 		{
 			return;
@@ -34,9 +39,11 @@ public class PointsOnCollision : MonoBehaviour {
 		int pointsToAdd = NumberOfPoints + extraForcePoint;
 		if (!hasCollided)
 		{
-
-
-			GameObject.FindWithTag("RoundManager").GetComponent<RoundManager>().AddPoints(pointsToAdd);
+			GameObject rm = GameObject.FindWithTag("RoundManager");
+			if (rm != null)
+			{
+				rm.GetComponent<RoundManager>().AddPoints(pointsToAdd);
+			}
 		}
 
 		if (UIToastPrefab != null)
